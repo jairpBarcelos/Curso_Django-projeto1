@@ -20,15 +20,18 @@ from django.http import HttpResponse
 
 #HTTP request
 def index(request):
-    return HttpResponse("Hello Django")
+    return HttpResponse("Home")
 
 def my_view(request):
-    return HttpResponse("Minhas infos")
+    return HttpResponse("My infos")
 
-
+def contact(request):
+    return HttpResponse("Contact")
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', index),
-    path('info/', my_view),
+    path('', index), #Homepage
+    path('info/', my_view), #/info/ My infos page
+    path('contact/', contact), #/contact/ Contact page
 ]
+  
